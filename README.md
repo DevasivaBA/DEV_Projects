@@ -3,7 +3,7 @@
 
 ## Overview
 
-This project aims to predict customer churn for a telecommunications company using machine learning techniques.  Churn, also known as customer attrition, refers to the phenomenon where customers stop doing business with a company. By accurately predicting which customers are likely to churn, the company can proactively implement retention strategies to reduce churn rates and improve profitability.
+This project aims to predict customer churn for a telecommunications company using machine learning techniques. Churn, also known as customer attrition, refers to the phenomenon where customers stop doing business with a company. By accurately predicting which customers are likely to churn, the company can proactively implement retention strategies to reduce churn rates and improve profitability.
 
 ## Dataset
 
@@ -16,9 +16,9 @@ The dataset contains information about customers of a telecom company, including
 - `churn_prediction.py`: The main Python script containing the code for data preprocessing, model training, hyperparameter tuning, evaluation, and feature importance analysis.
 - `WA_Fn-UseC_-Telco-Customer-Churn.csv`: The original dataset file.
 - `requirements.txt`: Lists the required Python libraries for running the code.
-- `Initial_Model_roc_curve.json`: Interactive plot of the ROC curve for the initial model (Logistic Regression).
-- `Best_Model_roc_curve.json`: Interactive plot of the ROC curve for the best model (Logistic Regression with tuned hyperparameters).
-- `feature_importance.json`: Interactive plot showcasing the importance of each feature in the best model.
+- `Initial_Model_roc_curve.png`: ROC curve for the initial logistic regression model.
+- `Best_Model_roc_curve.png`: ROC curve for the logistic regression model with tuned hyperparameters.
+- `feature_importance.png`: Feature importance plot for the best model.
 
 
 ## Approach
@@ -59,11 +59,21 @@ The best logistic regression model achieved the following performance on the tes
 
 *The specific results may vary slightly depending on the random state of the data split.*
 
-## Future Work
+### ROC Curves
 
-- **Explore More Features:** Investigate the potential impact of creating interaction features or binning continuous features.
-- **Try Different Algorithms:** Experiment with other classification algorithms like XGBoost, Random Forests, or Support Vector Machines to see if they can achieve better performance.
-- **Cost-Sensitive Learning:** If the cost of false positives and false negatives is different, explore cost-sensitive learning approaches to optimize the model for business objectives.
+| Initial Model                              | Best Model (Tuned)                         |
+| ---------------------------------------- | ---------------------------------------- |
+| ![Initial Model ROC Curve](Initial_Model_roc_curve.png) | ![Best Model ROC Curve](Best_Model_roc_curve.png) |
+
+
+### Feature Importance
+
+![Feature Importance Plot](feature_importance.png)
+
+
+## Limitations and Future Directions
+
+The model's recall could be improved, as missing out on potential churners can be costly for the company.  We could try incorporating more features, experimenting with different algorithms (e.g., XGBoost), or employing techniques like SMOTE to address class imbalance. 
 
 ## How to Run
 
